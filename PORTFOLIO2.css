@@ -1,0 +1,646 @@
+/* font do google que vou utilizar durante todo o codigo*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+:root{
+    --header-height: 3rem;
+    --font-semi: 600;
+}
+
+/* colores */
+:root{
+    --bg-c1: #C0AED4 ;
+    --bg-c2: #9995B8 ;
+    --bg-c3: #897DD3;
+    --bg-c4: #4B3977;
+    --bg-c5: #451350;
+    --bg-c6: #F1EACD;
+    --bg-c7: #000;
+    --bg-c8: #fff;
+}
+
+/* tipografia e fontes*/
+:root{
+    --body-font: 'Poppins';
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem; 
+}
+
+@media screen and(min-width: 768px){
+    :root{
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+  }  
+}
+
+/* Margens */
+:root{
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-0-5: 0.5rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+    --mb-0-75: 0.75rem;
+}
+
+/* z-index*/
+:root{
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/* ///////////////////////////////////////////////////////////////////////  */
+/* base */
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====================================================================== */
+body{
+    margin: 0px;
+    padding: 2px;
+    font-family: 'Poppins';
+    color: #000;
+}
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+/* ====================================================================== */
+html{
+    scroll-behavior: smooth;
+}
+
+/* ====================================================================== */
+h1,h2,p{
+    margin: 0;
+}
+
+h2.section__title{
+    font-size: 35px;
+}
+
+/* ====================================================================== */
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ====================================================================== */
+img{
+    max-width: 55%;
+    height: auto;
+    display: block;
+}
+
+/* ====================================================================== */
+/* o layout da pagina */
+header{
+    width: 100%;
+    max-width: 1024px;
+    height: 100vh;
+    position: fixed;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, .15);
+    background-size: cover;
+}
+
+header.menu{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    padding: 0.5rem;
+    
+}
+
+header nav.menu li{
+    display: inline-block;
+}
+
+header nav.menu a {
+    color: var(--bg-c1);
+}
+
+/* ====================================================================== */
+/* ola tudo no centro*/
+.about__img{
+    width: 200px;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+/* ====================================================================== */
+/* menu que vai esta com a linha de baixo do nome vai se o home
+e ficara sendo o primeiro quando abre e fecha o hambuger*/
+/*menu ativado*/
+.active::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: var(--bg-c1);
+}
+
+/* ====================================================================== */
+/* font-weight é o que da uma ilusao de negrito */
+menu ul li a {
+    margin: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* menu */
+.menu__logo{
+    background-image: url;
+}
+
+.menu-items{
+ 
+   position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.menu-items ul li a{
+    margin: 5px 0;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* ====================================================================== */
+/* home */
+.home_principal{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home__social{
+    display: flex;
+    row-gap: 1rem;
+    align-items: center;
+}
+
+.home__social-icon{
+    font-size: 1.25rem;
+    color: var(--bg-c4);
+}
+
+.home__data{
+    grid-column: 1/3;
+}
+
+.home__subtitle{
+    margin-bottom: var(--mb-2);
+}
+
+.home__scroll{
+    display: none;
+}
+
+.home__scroll-button{
+    transition: .3s;
+}
+
+.home__scroll-button:hover{
+    transform: translateY(.25rem);
+}
+
+.home__scroll-mouse{
+    font-size: 1.5rem;
+}
+
+.home__scroll-arrow{
+    font-size: 1.9rem;
+}
+
+.home_data{
+    align-self: center;
+}
+
+.home_title-color{
+    color: var(--bg-c3);
+}
+
+.home_social{
+    display: flex;
+    flex-direction: column;
+}
+
+.home_social-icon {
+    color: var(--bg-c1);
+}
+
+.home_img{
+    position: absolute;
+    
+}
+
+/* ================================================================== */
+/*buttons*/
+.button{
+    display: inline-block;
+    background-color: var(--bg-c4);
+    color: var(--bg-c8);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: 14px;
+}
+
+.button:hover{
+    background-color: var(--bg-c3);
+}
+
+.button-icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-2);
+    transition: .3s;
+}
+
+.buttons--flex{
+    padding: 0.5rem 1rem;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    cursor: pointer;
+    color: #C0AED4;
+    transition: 0.5s ease-in-out;
+}
+
+
+
+/* ====================================================================== */
+/*sobre*/
+.sobre__img{
+    width: 200px;
+    border-radius: .8rem;
+    align-content: center;
+    justify-content: center;
+}
+
+.sobre__description{
+    text-align: center;
+    margin-bottom: var(--mb-2);
+    font-size: 1rem;
+}
+
+.sobre__info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2);
+}
+
+.sobre__info-title{
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi);
+    color: var(--title-color);
+}
+
+.sobre__info-name{
+    font-size: small;
+}
+
+.sobre__info-title,
+.sobre__info-name{
+    display: block;
+    text-align: center;
+}
+
+.sobre__buttons {
+    display: inline-flex;
+    transition: .3s;
+    background-color: var(--bg-c4);
+    color: var(--bg-c8);
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: 15px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* ====================================================================== */
+/*nav - caixa com sombras*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: var(--bg-c4);
+    box-shadow: 4px 4px 12px rgb(0, 0, 0, 0.2);
+    padding: 0px 5%;
+}
+
+/* ====================================================================== */
+a{
+    position: relative;
+    color: var(--bg-c1);
+}
+
+a:hover{
+    position: relative;
+
+}
+
+/* retirou a linha de baixo dos nomes */
+a{
+    text-decoration: none;
+    padding:  8px 15px;
+}
+
+/* ====================================================================== */
+
+/* retirou as bolinhas*/
+ul{
+    list-style: none;
+    display: flex;
+}
+
+/* ====================================================================== */
+/* section */
+.section{
+    padding: 2rem 0 4rem;
+}
+
+.section__title{
+    font-size: 15px;
+}
+
+.section__subtitle{
+    display: block;
+    font-size: 15px;
+    font-family: var(--font-semi);
+    margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.section__subtitle{
+    text-align: center;
+}
+
+section.container, h1
+
+/* ====================================================================== */
+/* habilidades*/
+.habilidades__container {
+    row-gap: 0;
+}
+
+.habilidades__header{
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-2-5);
+    cursor: pointer;
+}
+
+.habilidades__icon,
+.habilidades__arrow{
+    font-size: 2rem;
+    color: var(--bg-c1);
+}
+
+.habilidades__icon{
+    margin-right: var(--mb-0-75);
+}
+
+.habilidades__title{
+    font-size: var(--h3-font-size);
+}
+
+.habilidades__subtitle{
+    font-size: var(--small-font-size);
+}
+
+.habilidades__arrow{
+    margin-left: auto;
+    transition: .4s;
+}
+
+.habilidades__list{
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
+}
+
+.habilidades__title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+}
+
+.habilidades__name{
+    font-size: var(--normal-font-size);
+}
+
+.habilidades__bar,
+.habilidades__porcentagem{
+    height: 5px;
+    border-radius: .25rem;
+}
+
+.habilidades__bar{
+    background-color: var(--bg-c1);
+}
+
+.habilidades__porcentagem{
+    display: block;
+    background-color: var(--bg-c3);
+}
+
+.habilidades__html{
+    width: 80%;
+}
+
+.habilidades__css{
+    width: 80%;
+}
+
+.habilidades__js{
+    width: 35%;
+}
+
+.habilidades__ts{
+    width: 5%;
+}
+
+.habilidades__c{
+    width: 45%;
+}
+
+.habilidades__py{
+    width: 35%;
+}
+
+.habilidades__php{
+    width: 5%;
+}
+
+.habilidades__laravel{
+    width: 5%;
+}
+
+.habilidades__informationsecurity{
+    width: 100%;
+}
+
+.habilidades__cybersecurity{
+    width: 5%;
+}
+
+.habilidades__figma{
+    width: 80%;
+}
+
+.habilidades__photoshop{
+    width: 20%;
+}
+
+/* ====================================================================== */
+/* Projetos */
+.projetos__icon{
+    width: 15rem;
+    font-size: 5rem;
+}
+
+
+/* ====================================================================== */
+/* Cards */
+/* ajeitando os cards ficando centralizado */
+.container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+    padding: 2rem 4rem;
+}
+
+/*falando com os cards */
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+/*falar diretamente com os cards */
+.card { /*na versao desktop */
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-c4);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* pouco mais escuro e ter mais contraste quano passar o mouse*/
+    filter: grayscale(0.2);
+    color: var(--bg-c1);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+/*para ficar separado um pouco */
+/*tom meio cinza meio laranja para a logo de projetos */
+.card-text {
+    width: 40%;
+    letter-spacing: 1px; 
+    color: var(--bg-c7);
+}
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* quando passar um mouse em cima de 
+projeto vai ter um circulo 
+quem faz isso é o content */
+.card-wrapper::before {
+    content: ''; /* ainda esta vazio */
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid var(--bg-c1);
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.card-wrapper p{
+    font-size: 0;
+    visibility: visible;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out; /*aparece quando passa o mouse em cima  */
+}
+
+.card:hover > .card-wrapper::before {
+    height: 250px;
+    width: 250px;
+    opacity: 1;
+}
+
+.card:hover > .card-wrapper p{
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* ====================================================================== */
+/* footer */
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--bg-c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-c1);
+    font-family: 'Poppins';
+}
+/* ====================================================================== */
